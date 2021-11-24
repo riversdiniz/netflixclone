@@ -3,11 +3,12 @@ import './MovieRow.css';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
+
 export default ({title, items}) => {
     const [scrollX, setScrollX] = useState(-400);
 
     const handleLeftArrow = () => {
-        let x = scrollX + Math.round(window.innerWidth /2);
+        let x = scrollX + Math.round(window.innerWidth / 2);
         if(x > 0) {
             x = 0;
         }
@@ -15,7 +16,7 @@ export default ({title, items}) => {
     }
 
     const handleRightArrow = () => {
-        let x = scrollX - Math.round(window.innerWidth /2);
+        let x = scrollX - Math.round(window.innerWidth / 2);
         let listW = items.results.length * 150;
         if((window.innerWidth - listW) > x) {
             x = (window.innerWidth - listW) - 60;
@@ -30,7 +31,7 @@ export default ({title, items}) => {
                 <NavigateBeforeIcon style={{fontSize: 50}} />
             </div>
             <div className="movieRow--right" onClick={handleRightArrow}>
-                <NavigateBeforeIcon style={{fontSize: 50}} />
+                <NavigateNextIcon style={{fontSize: 50}} />
             </div>
 
             <div className="movieRow--listarea">
